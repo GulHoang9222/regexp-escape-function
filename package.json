@@ -1,6 +1,6 @@
 {
   "name": "regexp-escape-function",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Converts a string into a regex-safe literal by escaping all metacharacters",
   "type": "module",
   "main": "src/index.js",
