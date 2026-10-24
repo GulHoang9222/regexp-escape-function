@@ -19,3 +19,10 @@ The trade-off is simplicity over completeness. This function escapes characters 
 ## Edge case
 
 The function throws a `TypeError` for non-string input rather than coercing it. This is deliberate: silently turning `null` into the string `"null"` would produce a pattern that matches the wrong text, and that kind of bug is hard to trace back to its source.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
